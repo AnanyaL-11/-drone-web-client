@@ -27,12 +27,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/logs", {
+      const res = await fetch("http://172.20.10.4:3000/logs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          drone_id: "64050738",
+          celsius: parseFloat(celsius),
+        }),
       });
 
       if (res.ok) {
