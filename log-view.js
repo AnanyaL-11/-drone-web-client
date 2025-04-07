@@ -15,11 +15,11 @@ async function loadLogs() {
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${log.drone_id}</td>
-        <td>${log.drone_name}</td>
-        <td>${log.country}</td>
-        <td>${log.celsius}</td>
-        <td>${log.created}</td>
+        <td data-label="Drone ID">${log.drone_id}</td>
+        <td data-label="Drone Name">${log.drone_name}</td>
+        <td data-label="Country">${log.country}</td>
+        <td data-label="Celsius">${log.celsius}</td>
+        <td data-label="Created">${log.created}</td>
       `;
 
       tableBody.appendChild(row);

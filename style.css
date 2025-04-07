@@ -65,3 +65,99 @@ th {
     flex-direction: column;
   }
 }
+/* ตั้งค่าทั่วไปให้รองรับขนาดจอ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fff);
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ปรับ navigation ให้แสดงเป็น column ในมือถือ */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #00796b;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #004d40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: #00695c;
+}
+
+/* ปรับเนื้อหาให้จัดกึ่งกลางและมีขนาดเหมาะสม */
+.page {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffffcc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+/* ตาราง log-view */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+thead {
+  background-color: #004d40;
+  color: white;
+}
+
+/* Responsive ส่วนสำคัญ!! */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bold;
+  }
+}
