@@ -1,7 +1,8 @@
 // web-application/log-view.js
 import { DRONE_ID } from "./config.js";
 
-const apiUrl = `http://localhost:3000/logs/${DRONE_ID}`;
+const apiUrl = `http://172.20.10.4:3000/...`;
+
 
 async function loadLogs() {
   try {
