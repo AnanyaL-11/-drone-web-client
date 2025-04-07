@@ -5,7 +5,7 @@ import { DRONE_ID } from "./config.js";
 let configData = null;
 
 async function loadConfig() {
-  const response = await fetch(`http://localhost:3000/configs/${DRONE_ID}`);
+  const response = await fetch(`http://172.20.10.4:3000/configs/${DRONE_ID}`);
   configData = await res.json();
 }
 
