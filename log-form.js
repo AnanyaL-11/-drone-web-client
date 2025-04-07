@@ -32,10 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          drone_id: "64050738",
-          celsius: parseFloat(celsius),
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {
