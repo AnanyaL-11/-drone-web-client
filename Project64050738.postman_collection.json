@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "af8f098f-ea3f-42f5-9f17-b21095376699",
+		"name": "Project64050738",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43762589",
+		"_collection_link": "https://ananya-7445168.postman.co/workspace/c950d1cb-47e6-42a4-89b8-510eab4037bd/collection/43762589-af8f098f-ea3f-42f5-9f17-b21095376699?action=share&source=collection_link&creator=43762589"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/logs/3001",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/logs/3001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logs",
+						"3001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://app-tracking.pockethost.io/api/collections/drone_logs/records",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 20250301efx",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"drone_id\": 64050738,\r\n  \"drone_name\": \"Ananya Lucksorn\",\r\n  \"country\": \"Thailand\",\r\n  \"celsius\": 25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app-tracking.pockethost.io/api/collections/drone_logs/records",
+					"protocol": "https",
+					"host": [
+						"app-tracking",
+						"pockethost",
+						"io"
+					],
+					"path": [
+						"api",
+						"collections",
+						"drone_logs",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/logs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"drone_id\": 64050738,\r\n  \"drone_name\": \"Ananya Lucksorn\",\r\n  \"country\": \"Thailand\",\r\n  \"celsius\": 25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
