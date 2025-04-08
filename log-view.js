@@ -1,7 +1,7 @@
 // web-application/log-view.js
 import { DRONE_ID } from "./config.js";
 
-const apiUrl =  `https://your-api.onrender.com/logs/${DRONE_ID}`;
+const apiUrl =  `http://localhost:3000/logs/${DRONE_ID}`;
 
 
 async function loadLogs() {
