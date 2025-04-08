@@ -5,7 +5,7 @@ import { DRONE_ID } from "./config.js";
 let configData = null;
 
 async function loadConfig() {
-  const response = await fetch(`http://172.20.10.4:3000/configs/${DRONE_ID}`);
+  const response = await fetch(`https://abc1234.ap.ngrok.io/configs/${DRONE_ID}`);
   configData = await res.json();
 }
 
@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     try {
-      const res = await fetch("http://172.20.10.4:3000/logs", {
+      const res = await fetch("https://abc1234.ap.ngrok.io/logs");
+", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
