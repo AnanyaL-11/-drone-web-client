@@ -5,7 +5,7 @@ let configData = null;
 
 async function loadConfig() {
   try {
-    const response = await fetch(`https://abc1234.ap.ngrok.io/configs/${DRONE_ID}`);
+    const response = await fetch(`http://localhost:3000/configs/${DRONE_ID}`);
     configData = await response.json();
   } catch (err) {
     console.error("Error loading config:", err);
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     try {
-      const res = await fetch(`https://abc1234.ap.ngrok.io/logs`, {
+      const res = await fetch(`http://localhost:3000/logs`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
