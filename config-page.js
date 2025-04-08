@@ -1,6 +1,6 @@
 import { DRONE_ID } from "./config.js";
 
-const apiUrl = `http://172.20.10.4:3000/configs/${DRONE_ID}`;
+const apiUrl = `https://abc1234.ap.ngrok.io/configs/${DRONE_ID}`;
 
 
 console.log("Fetching from:", apiUrl);  
