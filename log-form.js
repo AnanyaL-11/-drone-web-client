@@ -1,7 +1,6 @@
-// web-client/log-form.js
+
 import { DRONE_ID, API_BASE_URL } from "./config.js";
 
-// โหลด config มาก่อน
 let configData = null;
 
 async function loadConfig() {
