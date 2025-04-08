@@ -2,10 +2,16 @@ import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
 
+
 const app = express();
-app.use(cors());
 const port = 3000;
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); // หรือเปลี่ยน * เป็น origin ที่ต้องการ
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 
 // GET /configs/:id
 app.get('/configs/:id', async (req, res) => {

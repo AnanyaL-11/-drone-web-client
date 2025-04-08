@@ -1,12 +1,16 @@
 // web-client/log-form.js
-import { DRONE_ID } from "./config.js";
+import { DRONE_ID, API_BASE_URL } from "./config.js";
 
-// โหลด config มาก่อน (จาก API เดิมที่ใช้ใน Page 1)
+// โหลด config มาก่อน
 let configData = null;
 
 async function loadConfig() {
-  const response = await fetch(`https://abc1234.ap.ngrok.io/configs/${DRONE_ID}`);
-  configData = await res.json();
+  try {
+    const response = await fetch(`https://abc1234.ap.ngrok.io/configs/${DRONE_ID}`);
+    configData = await response.json();
+  } catch (err) {
+    console.error("Error loading config:", err);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -17,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const celsius = parseFloat(document.getElementById("celsius").value);
 
     const payload = {
@@ -27,8 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     try {
-      const res = await fetch("https://abc1234.ap.ngrok.io/logs");
-", {
+      const res = await fetch(`https://abc1234.ap.ngrok.io/logs`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,4 +52,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 });
-
